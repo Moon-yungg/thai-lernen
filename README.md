@@ -12,6 +12,16 @@ npm run build      # Produktions-Build nach dist/
 
 **Wichtig fürs Handy:** Mikrofon und Installation als App gehen nur über **HTTPS** (oder localhost). Im WLAN über `http://192.168…` laufen alle Übungen außer Sprechen. Für die volle Nutzung hostest du die App zum Beispiel auf GitHub Pages. Die Datei `.github/workflows/pages.yml` ist dafür schon vorbereitet.
 
+## Online-Version
+
+Die App läuft auf **https://moon-yungg.github.io/thai-lernen/**. Jeder Push auf `main` baut sie neu, über GitHub Actions und die Datei `.github/workflows/pages.yml`.
+
+Die Ausspracheanalyse kommt dann vom PC, sofern er erreichbar ist. Die Adresse steht in der Repository-Variable `VITE_API_BASE` und lässt sich in der App unter Profil ändern. Ist der PC nicht erreichbar, nutzt die App die Spracherkennung des Handys mit denselben Fehlerregeln.
+
+**Einmalig auf dem Handy:**
+1. Öffne `https://192.168.178.23:8443` und bestätige das Zertifikat.
+2. Wenn Chrome fragt, ob die Seite auf Geräte im lokalen Netzwerk zugreifen darf, tippe auf „Zulassen“.
+
 ## Vom PC aus aufs Handy (mit Laut- und Tonanalyse)
 
 Doppelklick auf **`start.bat`**. Beim ersten Start wird alles installiert (etwa 4 GB: PyTorch mit CUDA und das Thai-Sprachmodell). Danach wird die App gebaut, und der Server startet. Er zeigt eine Adresse wie `https://192.168.178.23:8443` und einen QR-Code an.
