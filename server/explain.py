@@ -106,6 +106,9 @@ def diagnose(clean: str, recognized: str, syllables: list[dict], tone_mode: str 
             for k, (t, g) in enumerate(zip(tgt, got)):
                 s_k = _syllable_of(i1 + k, syllables)
                 _pair(add, t, g, s_k, _variant(clean, syllables, i1 + k, t, g))
+        elif op == "replace" and len(tgt) == 1 and tgt in "ึืิีุู" and any(c in "ึืิีุู" for c in got):
+            # Vokal durch Vokal mit Trägerzeichen ersetzt (z.B. ี → ือ): als Vokalqualität werten
+            _pair(add, tgt, next(c for c in got if c in "ึืิีุู"), syl, (syl, _swap(syl, tgt, got)))
         elif op == "replace":
             add("sound", syl, f"„{tgt}“ klang wie „{got}“", f"In „{syl}“ wurde statt „{tgt}“ eher „{got}“ gehört.", "Hör dir das Vorbild langsam (🐢) an und sprich Silbe für Silbe nach.", 0.6,
                 _cmp(syl, _swap(syl, tgt, got)))

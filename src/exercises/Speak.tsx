@@ -7,7 +7,8 @@ import { analyzeRemote, serverAvailable, type Analysis } from '../lib/server'
 import { record } from '../lib/recorder'
 import { getProgress } from '../lib/store'
 import { SpeakerPair } from '../components/ui'
-import { PronReport } from '../components/PronReport'
+import { Issues, PronReport } from '../components/PronReport'
+import { diagnose } from '../lib/diagnose'
 import type { ExProps } from './common'
 
 type E = Extract<Ex, { t: 'speak' }>
@@ -121,6 +122,7 @@ export function Speak({ ex, onSubmit, locked }: ExProps<E>) {
             {res.toneIssue && <div className="g-tip" style={{ marginTop: 8, fontSize: 14 }}>🎵 Die Laute stimmen, aber der <b>Ton</b> war vermutlich anders. Hör dir das Vorbild nochmal langsam an (🐢).</div>}
           </motion.div>
         )}
+        {res && res.verdict !== 'perfect' && res.best && <Issues issues={diagnose(target, res.best, it.tokens ?? target.split(/\s+/))} />}
         {clip && !rec && (
           <div className="card center" style={{ padding: 10 }}>
             <div style={{ fontWeight: 800, fontSize: 13, marginBottom: 6 }}>Deine Aufnahme</div>

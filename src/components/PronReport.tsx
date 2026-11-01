@@ -32,11 +32,11 @@ function Compare({ c }: { c: NonNullable<Issue['compare']> }) {
   )
 }
 
-function Issues({ a }: { a: Analysis }) {
-  if (!a.issues?.length) return null
+export function Issues({ issues }: { issues?: Issue[] }) {
+  if (!issues?.length) return null
   return (
     <div className="list" style={{ gap: 8 }}>
-      {a.issues.map((i, k) => (
+      {issues.map((i, k) => (
         <motion.div key={k} className="g-tip" style={{ fontSize: 14, padding: '10px 12px' }} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + k * 0.1 }}>
           <b>{ISSUE_ICON[i.type] || '•'} {i.title}</b>
           <div>{i.detail}</div>
@@ -136,7 +136,7 @@ export function PronReport({ a }: { a: Analysis }) {
         {' '}Die Tonbewertung ist eine Schätzung (bei Einzelwörtern etwa 60 % zuverlässig) – vergleiche die Kurven und hör dir das Vorbild an.
         {a.toneMode === null && ' Für Töne in Sätzen wird eine Vorbild-Aufnahme benötigt.'}
       </div>
-      <Issues a={a} />
+      <Issues issues={a.issues} />
     </motion.div>
   )
 }

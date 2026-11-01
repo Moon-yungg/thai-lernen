@@ -282,7 +282,9 @@ def levenshtein(a: str, b: str) -> int:
 # ---------------------------------------------------------------- API
 app = FastAPI(title="Thai lernen – Analyse-Server")
 # Die App kann von anderer Adresse kommen (z.B. GitHub Pages) – keine Cookies/Logins, daher offen
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET", "POST"], allow_headers=["*"])
+# allow_private_network: Chrome fragt nach, bevor eine öffentliche Seite (GitHub Pages) einen Server im Heimnetz anspricht
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET", "POST"], allow_headers=["*"], allow_private_network=True)
+
 
 
 @app.get("/api/health")
