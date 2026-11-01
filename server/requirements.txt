@@ -1,0 +1,11 @@
+# PyTorch mit CUDA separat installieren:  pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu128
+transformers
+pythainlp
+python-crfsuite
+praat-parselmouth
+soundfile
+fastapi
+uvicorn[standard]
+python-multipart
+cryptography
+qrcode

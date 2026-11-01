@@ -1,0 +1,10 @@
+transformers
+pythainlp
+python-crfsuite
+praat-parselmouth
+soundfile
+numpy
+fastapi
+uvicorn[standard]
+python-multipart
+edge-tts

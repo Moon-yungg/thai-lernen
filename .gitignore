@@ -1,0 +1,14 @@
+node_modules
+dist
+.claude
+server/.venv
+server/tts_cache
+server/*.pem
+server/cert.ip
+scripts/texts.json
+server/say_cache
+server/.venv-f5
+vergleich/
+__pycache__/
+*.pyc
+*.tsbuildinfo
