@@ -36,8 +36,9 @@ export function Draw({ ex, onSubmit, locked }: ExProps<E>) {
     const g = c.getContext('2d')!
     g.scale(dpr, dpr)
     g.clearRect(0, 0, W, W)
-    const dark = matchMedia('(prefers-color-scheme: dark)').matches
-    g.strokeStyle = dark ? '#3a3149' : '#efe6dd'
+    // Farben bewusst themenunabhängig: Browser-Dunkelmodi (z.B. Samsung Internet) färben die Seite um,
+    // das Canvas aber nicht – helle/dunkle Wahl nach prefers-color-scheme wäre dann unsichtbar
+    g.strokeStyle = 'rgba(140,128,165,0.35)'
     g.lineWidth = 2
     g.setLineDash([8, 8])
     for (const f of [0.25, 0.5, 0.75]) {
@@ -55,7 +56,7 @@ export function Draw({ ex, onSubmit, locked }: ExProps<E>) {
       g.font = `400 ${150 * s}px "Sarabun", Tahoma, sans-serif`
       g.textAlign = 'center'
       g.textBaseline = 'middle'
-      g.fillStyle = res ? (res.ok ? 'rgba(43,196,109,0.28)' : 'rgba(255,75,92,0.22)') : dark ? 'rgba(255,255,255,0.13)' : 'rgba(43,35,64,0.12)'
+      g.fillStyle = res ? (res.ok ? 'rgba(43,196,109,0.35)' : 'rgba(255,75,92,0.3)') : 'rgba(124,92,255,0.3)'
       g.fillText(target, ox + 128 * s, oy + 128 * s)
       if (gl.head) {
         const hx = ox + (gl.box.x + gl.head.x * gl.box.w) * s
