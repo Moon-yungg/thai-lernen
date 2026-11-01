@@ -7,6 +7,7 @@ import { Profile } from './screens/Profile'
 import { Session } from './screens/Session'
 import { DialogueScreen } from './screens/Dialogue'
 import { Alphabet } from './screens/Alphabet'
+import { StoryScreen } from './screens/Story'
 import { Screen } from './components/ui'
 import { sfx } from './lib/audio'
 import { dueIds, type Route } from './lib/nav'
@@ -69,6 +70,7 @@ export default function App() {
             {top.name === 'grammar' && <GrammarTopic id={top.id} onBack={back} />}
             {top.name === 'dialogue' && <DialogueScreen id={top.id} onBack={back} />}
             {top.name === 'alphabet' && <Alphabet onBack={back} />}
+            {top.name === 'story' && <StoryScreen id={top.id} onBack={back} />}
           </Screen>
         )}
       </AnimatePresence>

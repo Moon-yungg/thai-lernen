@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { dialogues, getItem, items } from '../data'
+import { dialogues, getItem, items, stories, toneSets } from '../data'
 import { chapterAccuracy, dueIds, learnedIds, mistakeIds, weakIds, type Route } from '../lib/nav'
 import { kindSession, reviewSession, shuffle } from '../lib/session'
 import { useProgress } from '../lib/store'
@@ -37,6 +37,13 @@ export function Practice({ go }: { go: (r: Route) => void }) {
     { icon: '🗣️', color: '#f7b500', title: 'Aussprache', sub: serverAvailable() ? 'Laut- & Tonanalyse auf deinem PC' : canRecognize() ? 'Nachsprechen mit Analyse' : 'Aufnehmen & vergleichen', ids: words.length ? words : learned, make: (ids) => kindSession(ids, 'speak', 10) },
     { icon: '👂', color: '#0b94d6', title: 'Hörverständnis', sub: 'Hören und verstehen', ids: learned, make: (ids) => shuffle([...kindSession(ids, 'listen-th', 6), ...kindSession(ids, 'listen-de', 6)]) },
     { icon: '🖼️', color: '#2fbf71', title: 'Bilder', sub: 'Bild ↔ Wort ↔ Audio', ids: pics, make: (ids) => shuffle([...kindSession(ids, 'pic-th', 4), ...kindSession(ids, 'th-pic', 4), ...kindSession(ids, 'audio-pic', 4)]) },
+    {
+      icon: '🎵', color: '#ff3d7f', title: 'Ton-Training', sub: 'Töne hören: Minimalpaare & Ton bestimmen',
+      ids: words.filter((id) => getItem(id).rom.length > 1),
+      fallback: toneSets.flatMap((st) => st.words.map((w) => w.id)).slice(0, 12),
+      make: (ids) => shuffle([...kindSession(ids, 'tone', 8), ...kindSession(toneSets.flatMap((st) => st.words.map((w) => w.id)).filter((id) => p.items[id] || ids.length < 6), 'tone-pair', 6)]),
+    },
+    { icon: '📖', color: '#00a8a8', title: 'Lesetraining', sub: 'Wie liest man das? Ton & Vokallänge', ids: words, fallback: items.filter((i) => i.rule).map((i) => i.id).slice(0, 12), make: (ids) => kindSession(ids, 'read-rom', 12) },
     { icon: '🧩', color: '#ff8a3d', title: 'Satzbau', sub: 'Sätze aus Bausteinen bauen', ids: sentences, make: (ids) => shuffle([...kindSession(ids, 'build', 5), ...kindSession(ids, 'listen-build', 3), ...kindSession(ids, 'cloze', 4)]) },
   ]
 
@@ -99,6 +106,20 @@ export function Practice({ go }: { go: (r: Route) => void }) {
             </div>
           </>
         )}
+
+        <div className="section-title">Lesetexte</div>
+        <div className="tiles">
+          {stories.map((st) => (
+            <button key={st.id} className="tile" onClick={() => go({ name: 'story', id: st.id })}>
+              <span className="ti" style={{ background: 'var(--bg2)' }}>{st.icon}</span>
+              <span>
+                <b>{st.title}</b>
+                <small>{st.level} · {st.sentences.length} Sätze</small>
+              </span>
+              {p.stories?.[st.id] !== undefined && <span className="cnt">{p.stories[st.id]}%</span>}
+            </button>
+          ))}
+        </div>
 
         <div className="section-title">Rollenspiele</div>
         <div className="tiles">

@@ -8,6 +8,7 @@ import { Confetti, Progress } from '../components/ui'
 import { Build, Choice, Cloze, Flash, Intro, Match, Type } from '../exercises/Basic'
 import { Speak } from '../exercises/Speak'
 import { Draw } from '../exercises/Draw'
+import { ToneEx } from '../exercises/Tone'
 
 export interface SessionConfig {
   title: string
@@ -172,6 +173,7 @@ export function Session({ cfg, onExit }: { cfg: SessionConfig; onExit: () => voi
           {ex.t === 'type' && <Type ex={ex} {...props} />}
           {ex.t === 'speak' && <Speak ex={ex} {...props} />}
           {ex.t === 'draw' && <Draw ex={ex} {...props} />}
+          {ex.t === 'tone' && <ToneEx ex={ex} {...props} />}
         </motion.div>
       </AnimatePresence>
 

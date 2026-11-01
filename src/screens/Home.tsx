@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import { chapters, dialogueById, grammarById, lessonList, type LessonRef } from '../data'
+import { chapters, dialogueById, grammarById, lessonList, storyById, type LessonRef } from '../data'
 import { sfx } from '../lib/audio'
 import { chapterUnlocked, dueIds, lessonUnlocked, type Route } from '../lib/nav'
 import { lessonSession, reviewSession } from '../lib/session'
@@ -21,7 +21,7 @@ export function Home({ go }: { go: (r: Route) => void }) {
 
   const start = (r: LessonRef) => {
     const first = !p.lessons[r.lesson.id]?.done
-    go({ name: 'session', cfg: { title: r.lesson.title, exercises: lessonSession(r.lesson.items, first), mode: 'lesson', lessonId: r.lesson.id, color: r.chapter.color } })
+    go({ name: 'session', cfg: { title: r.lesson.title, exercises: lessonSession(r.lesson.items, first, r.lesson.focus), mode: 'lesson', lessonId: r.lesson.id, color: r.chapter.color } })
     setOpen(null)
   }
 
@@ -149,6 +149,11 @@ export function Home({ go }: { go: (r: Route) => void }) {
               {open.lesson.grammar && grammarById.get(open.lesson.grammar) && (
                 <button className="btn ghost" onClick={() => (go({ name: 'grammar', id: open.lesson.grammar! }), setOpen(null))}>
                   📘 Grammatik: {grammarById.get(open.lesson.grammar)!.title}
+                </button>
+              )}
+              {open.lesson.story && storyById.get(open.lesson.story) && (
+                <button className="btn ghost" onClick={() => (go({ name: 'story', id: open.lesson.story! }), setOpen(null))}>
+                  📖 Lesetext: {storyById.get(open.lesson.story)!.title}
                 </button>
               )}
               {open.lesson.dialogue && dialogueById.get(open.lesson.dialogue) && (

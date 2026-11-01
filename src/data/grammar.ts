@@ -24,7 +24,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('เขา', 'kǎo', 'er/sie', 'S'), w('ดื่ม', 'dùem', 'trinken', 'V'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O')],
+        words: [w('เขา', 'kǎo', 'er/sie', 'S'), w('ดื่ม', 'dùuem', 'trinken', 'V'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O')],
         de: 'Er trinkt Kaffee. / Sie trinkt Kaffee.',
         note: 'Das Verb ดื่ม bleibt immer gleich – egal wer trinkt. เขา heißt „er“ und „sie“.',
       },
@@ -56,7 +56,7 @@ export const grammar: GrammarTopic[] = [
       {
         type: 'build',
         prompt: 'Bilde den Satz: „Ich trinke Wasser.“',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ดื่ม', 'dùem', 'trinken', 'V'), w('น้ำ', 'náam', 'Wasser', 'O'), KRAP],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ดื่ม', 'dùuem', 'trinken', 'V'), w('น้ำ', 'náam', 'Wasser', 'O'), KRAP],
         de: 'Ich trinke Wasser.',
       },
       {
@@ -97,7 +97,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('ขอบคุณ', 'kòp-kun', 'danken', 'V'), w('มาก', 'mâak', 'sehr', 'ADV'), w('ค่ะ', 'kâ', '(höflich, Frau)', 'PART')],
+        words: [w('ขอบคุณ', 'kòrp-kun', 'danken', 'V'), w('มาก', 'mâak', 'sehr', 'ADV'), w('ค่ะ', 'kâ', '(höflich, Frau)', 'PART')],
         de: 'Vielen Dank! (als Frau)',
       },
       {
@@ -114,12 +114,12 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'tip',
-        md: '**ครับ allein** heißt auch „Ja“ oder „Verstanden“. Wenn jemand dir etwas erklärt, nickst du einfach und sagst **ครับ**. Im schnellen Sprechen klingt es oft wie „kâp“ oder „káp“ – das ist normal.',
+        md: '**ครับ allein** heißt auch „Ja“ oder „Verstanden“. Wenn jemand dir etwas erklärt, nickst du einfach und sagst **ครับ**. Im schnellen Sprechen klingt es oft wie „káp“ (ohne r) – das ist normal.',
       },
       {
         type: 'build',
         prompt: 'Bedanke dich herzlich (als Mann).',
-        words: [w('ขอบคุณ', 'kòp-kun', 'danken', 'V'), w('มาก', 'mâak', 'sehr', 'ADV'), KRAP],
+        words: [w('ขอบคุณ', 'kòrp-kun', 'danken', 'V'), w('มาก', 'mâak', 'sehr', 'ADV'), KRAP],
         de: 'Vielen Dank!',
       },
       {
@@ -165,7 +165,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('กิน', 'gin', 'essen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O'), w('หรือ', 'rǔe', 'oder', 'Q'), w('ยัง', 'yang', 'noch nicht', 'Q'), KRAP],
+        words: [w('กิน', 'gin', 'essen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O'), w('หรือ', 'rǔue', 'oder', 'Q'), w('ยัง', 'yang', 'noch nicht', 'Q'), KRAP],
         de: 'Hast du schon gegessen?',
         note: 'Kein „du“ im Satz – trotzdem ist klar, wer gemeint ist. Eine typische Begrüßung!',
       },
@@ -191,7 +191,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('นก', 'nók', 'Nok (= ich)', 'S'), w('หิว', 'hǐu', 'hungrig', 'ADJ'), w('แล้ว', 'láew', 'schon/jetzt', 'ASP'), w('ค่ะ', 'kâ', '(höflich, Frau)', 'PART')],
+        words: [w('นก', 'nók', 'Nok (= ich)', 'S'), w('หิว', 'hǐu', 'hungrig', 'ADJ'), w('แล้ว', 'láeo', 'schon/jetzt', 'ASP'), w('ค่ะ', 'kâ', '(höflich, Frau)', 'PART')],
         de: 'Ich habe jetzt Hunger. (Nok spricht über sich)',
         note: 'Viele Thai-Frauen nennen sich selbst beim Spitznamen statt „ich“ zu sagen. Das klingt freundlich und süß.',
       },
@@ -261,11 +261,11 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'text',
-        md: '**Verdopplung:** Das Zeichen **ๆ** (mái yá-mók) wiederholt das Wort davor. Bei Adjektiven macht das den Ausdruck **lebendiger** – je nach Situation verstärkend („richtig schön“) oder weicher und umgangssprachlicher („schön langsam“).',
+        md: '**Verdopplung:** Das Zeichen **ๆ** (máai yá-mók) wiederholt das Wort davor. Bei Adjektiven macht das den Ausdruck **lebendiger** – je nach Situation verstärkend („richtig schön“) oder weicher und umgangssprachlicher („schön langsam“).',
       },
       {
         type: 'example',
-        words: [w('พูด', 'pûut', 'sprechen', 'V'), w('ช้าๆ', 'cháa-cháa', 'langsam-langsam', 'ADV'), w('หน่อย', 'nòi', 'ein bisschen', 'PART'), KRAP],
+        words: [w('พูด', 'pôot', 'sprechen', 'V'), w('ช้าๆ', 'cháa-cháa', 'langsam-langsam', 'ADV'), w('หน่อย', 'nòi', 'ein bisschen', 'PART'), KRAP],
         de: 'Sprich bitte etwas langsamer.',
         note: 'Ein sehr nützlicher Satz für Anfänger!',
       },
@@ -279,7 +279,7 @@ export const grammar: GrammarTopic[] = [
           ['ร้อน', 'rórn', 'heiß'],
           ['หนาว', 'nǎao', 'kalt (Wetter)'],
           ['แพง', 'paeng', 'teuer'],
-          ['ถูก', 'tùuk', 'billig'],
+          ['ถูก', 'tòok', 'billig'],
           ['สวย', 'sǔai', 'schön, hübsch'],
           ['อร่อย', 'à-ròi', 'lecker'],
           ['เผ็ด', 'pèt', 'scharf'],
@@ -333,16 +333,16 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'text',
-        md: '**ไม่ได้** (mâi dâai) hat zwei Bedeutungen – je nach Position:\n\n**Vor dem Verb:** „habe nicht (getan)“ – oft für die Vergangenheit oder um etwas richtigzustellen.\n\n**Nach dem Verb:** „kann nicht / darf nicht“.',
+        md: '**ไม่ได้** (mâi dâi) hat zwei Bedeutungen – je nach Position:\n\n**Vor dem Verb:** „habe nicht (getan)“ – oft für die Vergangenheit oder um etwas richtigzustellen.\n\n**Nach dem Verb:** „kann nicht / darf nicht“.',
       },
       {
         type: 'example',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ไม่ได้', 'mâi dâai', 'nicht (getan)', 'NEG'), w('ไป', 'bpai', 'gehen', 'V'), KRAP],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ไม่ได้', 'mâi dâi', 'nicht (getan)', 'NEG'), w('ไป', 'bpai', 'gehen', 'V'), KRAP],
         de: 'Ich bin nicht hingegangen.',
       },
       {
         type: 'example',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('กิน', 'gin', 'essen', 'V'), w('เผ็ด', 'pèt', 'scharf', 'ADJ'), w('ไม่ได้', 'mâi dâai', 'nicht können', 'NEG'), KRAP],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('กิน', 'gin', 'essen', 'V'), w('เผ็ด', 'pèt', 'scharf', 'ADJ'), w('ไม่ได้', 'mâi dâi', 'nicht können', 'NEG'), KRAP],
         de: 'Ich kann nicht scharf essen.',
         note: 'Diesen Satz wirst du in Thailand oft brauchen!',
       },
@@ -405,11 +405,11 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'text',
-        md: 'Weitere Fragen am Satzende:\n\n**หรือเปล่า** (rǔe bplào) – „… oder nicht?“, neutral und sehr häufig.\n\n**ใช่ไหม** (châi mǎi) – „…, stimmt’s?“\n\n**หรือยัง** (rǔe yang) – „schon oder noch nicht?“',
+        md: 'Weitere Fragen am Satzende:\n\n**หรือเปล่า** (rǔue bplào) – „… oder nicht?“, neutral und sehr häufig.\n\n**ใช่ไหม** (châi mǎi) – „…, stimmt’s?“\n\n**หรือยัง** (rǔue yang) – „schon oder noch nicht?“',
       },
       {
         type: 'example',
-        words: [w('คุณ', 'kun', 'du', 'S'), w('มี', 'mee', 'haben', 'V'), w('แฟน', 'faen', 'Freund/in', 'O'), w('หรือเปล่า', 'rǔe bplào', 'oder nicht', 'Q'), KRAP],
+        words: [w('คุณ', 'kun', 'du', 'S'), w('มี', 'mee', 'haben', 'V'), w('แฟน', 'faen', 'Freund/in', 'O'), w('หรือเปล่า', 'rǔue bplào', 'oder nicht', 'Q'), KRAP],
         de: 'Hast du einen Freund / eine Freundin?',
       },
       {
@@ -440,7 +440,7 @@ export const grammar: GrammarTopic[] = [
       {
         type: 'build',
         prompt: 'Frag: „Wo ist die Toilette?“',
-        words: [w('ห้องน้ำ', 'hôrng-náam', 'Toilette', 'S'), w('อยู่', 'yùu', 'sich befinden', 'V'), w('ที่ไหน', 'têe-nǎi', 'wo', 'Q'), KRAP],
+        words: [w('ห้องน้ำ', 'hôrng-náam', 'Toilette', 'S'), w('อยู่', 'yòo', 'sich befinden', 'V'), w('ที่ไหน', 'têe-nǎi', 'wo', 'Q'), KRAP],
         de: 'Wo ist die Toilette?',
       },
       {
@@ -480,10 +480,10 @@ export const grammar: GrammarTopic[] = [
         type: 'table',
         head: ['Marker', 'Umschrift', 'Stellung', 'Bedeutung'],
         rows: [
-          ['แล้ว', 'láew', 'nach Verb / Satzende', 'schon, erledigt'],
+          ['แล้ว', 'láeo', 'nach Verb / Satzende', 'schon, erledigt'],
           ['จะ', 'jà', 'vor dem Verb', 'Zukunft, Absicht: „werde“'],
           ['กำลัง', 'gam-lang', 'vor dem Verb', 'gerade dabei'],
-          ['อยู่', 'yùu', 'nach Verb / Satzende', 'gerade (Dauer)'],
+          ['อยู่', 'yòo', 'nach Verb / Satzende', 'gerade (Dauer)'],
           ['เคย', 'koei', 'vor dem Verb', 'schon einmal (Erfahrung)'],
           ['ยังไม่', 'yang mâi', 'vor dem Verb', 'noch nicht'],
         ],
@@ -492,16 +492,16 @@ export const grammar: GrammarTopic[] = [
         type: 'compare',
         title: '„schon“ (แล้ว) steht am Ende',
         de: ['Ich', 'habe', 'schon', 'gegessen'],
-        th: [w('ผม', 'pǒm', 'ich', 'S'), w('กิน', 'gin', 'essen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O'), w('แล้ว', 'láew', 'schon', 'ASP')],
+        th: [w('ผม', 'pǒm', 'ich', 'S'), w('กิน', 'gin', 'essen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O'), w('แล้ว', 'láeo', 'schon', 'ASP')],
       },
       {
         type: 'example',
-        words: [w('พรุ่งนี้', 'prûng-née', 'morgen', 'TIME'), w('ผม', 'pǒm', 'ich', 'S'), w('จะ', 'jà', 'werden', 'ASP'), w('ไป', 'bpai', 'fahren', 'V'), w('ภูเก็ต', 'puu-gèt', 'Phuket', 'O')],
+        words: [w('พรุ่งนี้', 'prûng-née', 'morgen', 'TIME'), w('ผม', 'pǒm', 'ich', 'S'), w('จะ', 'jà', 'werden', 'ASP'), w('ไป', 'bpai', 'fahren', 'V'), w('ภูเก็ต', 'poo-gèt', 'Phuket', 'O')],
         de: 'Morgen fahre ich nach Phuket.',
       },
       {
         type: 'example',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('กำลัง', 'gam-lang', 'gerade', 'ASP'), w('กิน', 'gin', 'essen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O'), w('อยู่', 'yùu', '(gerade)', 'ASP')],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('กำลัง', 'gam-lang', 'gerade', 'ASP'), w('กิน', 'gin', 'essen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O'), w('อยู่', 'yòo', '(gerade)', 'ASP')],
         de: 'Ich esse gerade.',
         note: 'กำลัง … อยู่ wird oft zusammen benutzt – eins davon reicht aber auch.',
       },
@@ -521,7 +521,7 @@ export const grammar: GrammarTopic[] = [
           ['เมื่อวาน', 'mûea-waan', 'gestern'],
           ['วันนี้', 'wan-née', 'heute'],
           ['พรุ่งนี้', 'prûng-née', 'morgen'],
-          ['ตอนนี้', 'dton-née', 'jetzt'],
+          ['ตอนนี้', 'dtorn-née', 'jetzt'],
           ['เมื่อกี้', 'mûea-gêe', 'gerade eben'],
           ['ปีหน้า', 'bpee nâa', 'nächstes Jahr'],
         ],
@@ -568,7 +568,7 @@ export const grammar: GrammarTopic[] = [
           ['ใบ', 'bai', 'Taschen, Tickets, Blätter, Geschirr', 'ตั๋ว 2 ใบ – 2 Tickets'],
           ['ขวด', 'kùat', 'Flaschen', 'น้ำ 2 ขวด – 2 Flaschen Wasser'],
           ['จาน', 'jaan', 'Teller (Portionen)', 'ข้าวผัด 2 จาน – 2 Bratreis'],
-          ['แก้ว', 'gâew', 'Gläser (Getränke)', 'กาแฟ 2 แก้ว – 2 Kaffee'],
+          ['แก้ว', 'gâeo', 'Gläser (Getränke)', 'กาแฟ 2 แก้ว – 2 Kaffee'],
         ],
       },
       {
@@ -583,7 +583,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('กาแฟ', 'gaa-fae', 'Kaffee', 'N'), w('เย็น', 'yen', 'kalt', 'ADJ'), w('หนึ่ง', 'nùeng', 'eins', 'NUM'), w('แก้ว', 'gâew', 'Glas', 'CLF')],
+        words: [w('กาแฟ', 'gaa-fae', 'Kaffee', 'N'), w('เย็น', 'yen', 'kalt', 'ADJ'), w('หนึ่ง', 'nùeng', 'eins', 'NUM'), w('แก้ว', 'gâeo', 'Glas', 'CLF')],
         de: 'ein Eiskaffee',
       },
       {
@@ -592,7 +592,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('แมว', 'maew', 'Katze', 'N'), w('ตัว', 'dtua', '(Tier)', 'CLF'), w('นี้', 'née', 'dieser', 'ADJ'), w('น่ารัก', 'nâa-rák', 'süß', 'ADJ')],
+        words: [w('แมว', 'maeo', 'Katze', 'N'), w('ตัว', 'dtua', '(Tier)', 'CLF'), w('นี้', 'née', 'dieser', 'ADJ'), w('น่ารัก', 'nâa-rák', 'süß', 'ADJ')],
         de: 'Diese Katze ist süß.',
       },
       {
@@ -602,7 +602,7 @@ export const grammar: GrammarTopic[] = [
       {
         type: 'build',
         prompt: 'Bestelle: „Zwei Gläser Wasser, bitte.“',
-        words: [w('ขอ', 'kǒr', 'bitten um', 'V'), w('น้ำ', 'náam', 'Wasser', 'O'), w('สอง', 'sǒrng', 'zwei', 'NUM'), w('แก้ว', 'gâew', 'Glas', 'CLF'), KRAP],
+        words: [w('ขอ', 'kǒr', 'bitten um', 'V'), w('น้ำ', 'náam', 'Wasser', 'O'), w('สอง', 'sǒrng', 'zwei', 'NUM'), w('แก้ว', 'gâeo', 'Glas', 'CLF'), KRAP],
         de: 'Zwei Gläser Wasser, bitte.',
       },
       {
@@ -657,7 +657,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'text',
-        md: 'Den Ton kann man aus der Schrift **berechnen**. Dafür brauchst du vier Dinge:\n\n1. die **Klasse** des Anfangskonsonanten (Mittel-, Hoch- oder Tiefklasse)\n\n2. ob die Silbe **lebend** oder **tot** ist\n\n3. bei toten Silben mit Tiefklasse: ob der Vokal **kurz** oder **lang** ist\n\n4. ob ein **Tonzeichen** über dem Konsonanten steht\n\n**Stummes ห vorne:** Steht ห vor einem Tiefklasse-Konsonanten wie ม, น, ง, ย, ร, ล, ว, gilt die Silbe als **Hochklasse**: **หมา** (mǎa), **หนาว** (nǎao). Ebenso macht **อ** vor ย daraus Mittelklasse: **อยาก** (yàak), **อยู่** (yùu).\n\n**Lebende Silbe** (คำเป็น): endet auf einen **langen Vokal** oder auf **m, n, ng, y, w** (ม น ง ย ว). Auch ำ, ใ, ไ und เ–า zählen als lebend.\n\n**Tote Silbe** (คำตาย): endet auf einen **kurzen Vokal** oder auf **k, p, t** (z. B. ก บ ด).',
+        md: 'Den Ton kann man aus der Schrift **berechnen**. Dafür brauchst du vier Dinge:\n\n1. die **Klasse** des Anfangskonsonanten (Mittel-, Hoch- oder Tiefklasse)\n\n2. ob die Silbe **lebend** oder **tot** ist\n\n3. bei toten Silben mit Tiefklasse: ob der Vokal **kurz** oder **lang** ist\n\n4. ob ein **Tonzeichen** über dem Konsonanten steht\n\n**Stummes ห vorne:** Steht ห vor einem klingenden Tiefklasse-Konsonanten (ง ญ น ม ย ร ล ว), gilt die Silbe als **Hochklasse**: **หมา** (mǎa), **หนาว** (nǎao). Ebenso macht ein stummes **อ** vor ย die Silbe zur Mittelklasse – das gibt es nur in vier Wörtern: **อยาก** (yàak), **อยู่** (yòo), **อย่า** (yàa), **อย่าง** (yàang).\n\n**Lebende Silbe** (คำเป็น): endet auf einen **langen Vokal** oder auf **m, n, ng, y, w** (ม น ง ย ว). Auch ำ, ใ, ไ und เ–า zählen als lebend.\n\n**Tote Silbe** (คำตาย): endet auf einen **kurzen Vokal** oder auf **k, p, t** (z. B. ก บ ด).',
       },
       { type: 'widget', widget: 'consonant-classes' },
       {
@@ -671,7 +671,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'table',
-        head: ['Klasse', '่ (mái èk)', '้ (mái to)', '๊ (mái dtree)', '๋ (mái jàt-dtà-waa)'],
+        head: ['Klasse', '่ (máai èk)', '้ (máai toh)', '๊ (máai dtree)', '๋ (máai jàt-dtà-waa)'],
         rows: [
           ['Mittelklasse', 'tief', 'fallend', 'hoch', 'steigend'],
           ['Hochklasse', 'tief', 'fallend', '–', '–'],
@@ -682,21 +682,21 @@ export const grammar: GrammarTopic[] = [
         type: 'example',
         words: [w('ค่ะ', 'kâ', '(Frau, Aussage)', 'PART'), w('คะ', 'ká', '(Frau, Frage)', 'PART')],
         de: 'Zwei Partikeln, zwei Töne',
-        note: 'ค = Tiefklasse. คะ ist eine tote, kurze Silbe → hoch. ค่ะ hat mái èk → bei Tiefklasse fallend.',
+        note: 'ค = Tiefklasse. คะ ist eine tote, kurze Silbe → hoch. ค่ะ hat máai èk → bei Tiefklasse fallend.',
       },
       { type: 'widget', widget: 'tone-calculator' },
       {
         type: 'build',
         prompt: 'Der berühmte Zungenbrecher: „Brennt neues Holz nicht?“',
-        words: [w('ไม้', 'mái', 'Holz', 'S'), w('ใหม่', 'mài', 'neu', 'ADJ'), w('ไม่', 'mâi', 'nicht', 'NEG'), w('ไหม้', 'mâi', 'brennen', 'V'), w('ไหม', 'mǎi', '(Frage)', 'Q')],
+        words: [w('ไม้', 'máai', 'Holz', 'S'), w('ใหม่', 'mài', 'neu', 'ADJ'), w('ไม่', 'mâi', 'nicht', 'NEG'), w('ไหม้', 'mâi', 'brennen', 'V'), w('ไหม', 'mǎi', '(Frage)', 'Q')],
         de: 'Brennt neues Holz nicht?',
       },
       {
         type: 'quiz',
-        question: 'Welchen Ton hat ไก่? (ก = Mittelklasse, Tonzeichen mái èk)',
+        question: 'Welchen Ton hat ไก่? (ก = Mittelklasse, Tonzeichen máai èk)',
         options: ['mittel', 'tief', 'fallend', 'hoch'],
         answer: 1,
-        explain: 'Mittelklasse + mái èk (่) = tiefer Ton: gài.',
+        explain: 'Mittelklasse + máai èk (่) = tiefer Ton: gài.',
       },
     ],
   },
@@ -715,7 +715,7 @@ export const grammar: GrammarTopic[] = [
         type: 'compare',
         title: 'Erst gehen, dann kaufen – genau in dieser Reihenfolge',
         de: ['Ich', 'gehe', 'Reis', 'kaufen'],
-        th: [w('ผม', 'pǒm', 'ich', 'S'), w('ไป', 'bpai', 'gehen', 'V'), w('ซื้อ', 'súe', 'kaufen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O')],
+        th: [w('ผม', 'pǒm', 'ich', 'S'), w('ไป', 'bpai', 'gehen', 'V'), w('ซื้อ', 'súue', 'kaufen', 'V'), w('ข้าว', 'kâao', 'Reis', 'O')],
       },
       {
         type: 'example',
@@ -767,7 +767,7 @@ export const grammar: GrammarTopic[] = [
       {
         type: 'build',
         prompt: 'Sag: „Wir gehen zusammen Kaffee trinken.“',
-        words: [w('เรา', 'rao', 'wir', 'S'), w('ไป', 'bpai', 'gehen', 'V'), w('ดื่ม', 'dùem', 'trinken', 'V'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O'), w('กัน', 'gan', 'zusammen', 'ADV')],
+        words: [w('เรา', 'rao', 'wir', 'S'), w('ไป', 'bpai', 'gehen', 'V'), w('ดื่ม', 'dùuem', 'trinken', 'V'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O'), w('กัน', 'gan', 'zusammen', 'ADV')],
         de: 'Wir gehen zusammen Kaffee trinken.',
       },
       {
@@ -803,21 +803,21 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('อยาก', 'yàak', 'möchten', 'V'), w('ได้', 'dâai', 'bekommen', 'V'), w('เสื้อ', 'sûea', 'Hemd', 'O'), w('ตัว', 'dtua', '(Kleidung)', 'CLF'), w('นี้', 'née', 'dieses', 'ADJ')],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('อยาก', 'yàak', 'möchten', 'V'), w('ได้', 'dâi', 'bekommen', 'V'), w('เสื้อ', 'sûea', 'Hemd', 'O'), w('ตัว', 'dtua', '(Kleidung)', 'CLF'), w('นี้', 'née', 'dieses', 'ADJ')],
         de: 'Ich möchte dieses Hemd haben.',
       },
       {
         type: 'text',
-        md: '**ชอบ** (chôp) heißt „mögen“ – mit **Nomen** oder mit **Verb** („gern tun“).\n\n**ต้องการ** (dtôrng-gaan) heißt „benötigen, wünschen“. Es klingt **formell** – typisch im Hotel oder in Formularen, aber steif an der Garküche.\n\nBeim **Bestellen und Einkaufen** sagt man **เอา** (ao, „nehmen“) oder **ขอ** (kǒr, „bitten um“). ขอ klingt etwas höflicher.',
+        md: '**ชอบ** (chôrp) heißt „mögen“ – mit **Nomen** oder mit **Verb** („gern tun“).\n\n**ต้องการ** (dtôrng-gaan) heißt „benötigen, wünschen“. Es klingt **formell** – typisch im Hotel oder in Formularen, aber steif an der Garküche.\n\nBeim **Bestellen und Einkaufen** sagt man **เอา** (ao, „nehmen“) oder **ขอ** (kǒr, „bitten um“). ขอ klingt etwas höflicher.',
       },
       {
         type: 'example',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ชอบ', 'chôp', 'mögen', 'V'), w('อาหาร', 'aa-hǎan', 'Essen', 'O'), w('ไทย', 'tai', 'thailändisch', 'ADJ')],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ชอบ', 'chôrp', 'mögen', 'V'), w('อาหาร', 'aa-hǎan', 'Essen', 'O'), w('ไทย', 'tai', 'thailändisch', 'ADJ')],
         de: 'Ich mag thailändisches Essen.',
       },
       {
         type: 'example',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ชอบ', 'chôp', 'mögen', 'V'), w('ว่ายน้ำ', 'wâai-náam', 'schwimmen', 'V')],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ชอบ', 'chôrp', 'mögen', 'V'), w('ว่ายน้ำ', 'wâai-náam', 'schwimmen', 'V')],
         de: 'Ich schwimme gern.',
       },
       {
@@ -830,8 +830,8 @@ export const grammar: GrammarTopic[] = [
         head: ['Wort', 'Umschrift', 'danach', 'Bedeutung'],
         rows: [
           ['อยาก', 'yàak', 'Verb', 'möchten, Lust haben'],
-          ['อยากได้', 'yàak dâai', 'Nomen', 'haben wollen'],
-          ['ชอบ', 'chôp', 'Nomen oder Verb', 'mögen, gern tun'],
+          ['อยากได้', 'yàak dâi', 'Nomen', 'haben wollen'],
+          ['ชอบ', 'chôrp', 'Nomen oder Verb', 'mögen, gern tun'],
           ['ต้องการ', 'dtôrng-gaan', 'Nomen oder Verb', 'benötigen (formell)'],
           ['เอา', 'ao', 'Nomen', 'nehmen (bestellen, kaufen)'],
           ['ขอ', 'kǒr', 'Nomen', 'bitte geben Sie mir …'],
@@ -844,7 +844,7 @@ export const grammar: GrammarTopic[] = [
       {
         type: 'build',
         prompt: 'Sag: „Ich möchte Kaffee trinken.“',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('อยาก', 'yàak', 'möchten', 'V'), w('ดื่ม', 'dùem', 'trinken', 'V'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O'), KRAP],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('อยาก', 'yàak', 'möchten', 'V'), w('ดื่ม', 'dùuem', 'trinken', 'V'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O'), KRAP],
         de: 'Ich möchte Kaffee trinken.',
       },
       {
@@ -880,7 +880,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('อัน', 'an', 'Stück', 'CLF'), w('นี้', 'née', 'dieses', 'ADJ'), w('ถูก', 'tùuk', 'billig', 'ADJ'), w('กว่า', 'gwàa', 'mehr', 'ADV')],
+        words: [w('อัน', 'an', 'Stück', 'CLF'), w('นี้', 'née', 'dieses', 'ADJ'), w('ถูก', 'tòok', 'billig', 'ADJ'), w('กว่า', 'gwàa', 'mehr', 'ADV')],
         de: 'Dieses hier ist billiger.',
         note: 'Das „als …“ kann man weglassen, wenn klar ist, womit verglichen wird.',
       },
@@ -895,7 +895,7 @@ export const grammar: GrammarTopic[] = [
       },
       {
         type: 'example',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('สูง', 'sǔung', 'groß (Körper)', 'ADJ'), w('เท่ากับ', 'tâo-gàp', 'genauso wie', 'PREP'), w('พี่ชาย', 'pêe-chaai', 'älterer Bruder', 'O')],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('สูง', 'sǒong', 'groß (Körper)', 'ADJ'), w('เท่ากับ', 'tâo-gàp', 'genauso wie', 'PREP'), w('พี่ชาย', 'pêe-chaai', 'älterer Bruder', 'O')],
         de: 'Ich bin genauso groß wie mein älterer Bruder.',
       },
       {
@@ -915,7 +915,7 @@ export const grammar: GrammarTopic[] = [
       {
         type: 'build',
         prompt: 'Sag: „Ich mag Tee lieber als Kaffee.“',
-        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ชอบ', 'chôp', 'mögen', 'V'), w('ชา', 'chaa', 'Tee', 'O'), w('มากกว่า', 'mâak-gwàa', 'mehr als', 'ADV'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O')],
+        words: [w('ผม', 'pǒm', 'ich', 'S'), w('ชอบ', 'chôrp', 'mögen', 'V'), w('ชา', 'chaa', 'Tee', 'O'), w('มากกว่า', 'mâak-gwàa', 'mehr als', 'ADV'), w('กาแฟ', 'gaa-fae', 'Kaffee', 'O')],
         de: 'Ich mag Tee lieber als Kaffee.',
       },
       {

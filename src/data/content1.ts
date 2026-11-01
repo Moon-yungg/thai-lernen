@@ -39,7 +39,7 @@ export const items1: Item[] = [
     alt: ['ja', 'Höflichkeitswort', 'Höflichkeitspartikel'],
     note: 'Frauen sagen ค่ะ, in Fragen คะ (ká). Du als Mann sagst ครับ.',
   }),
-  w('k2-thanks', 'ขอบคุณ', 'kòp-kun', 'danke', {
+  w('k2-thanks', 'ขอบคุณ', 'kòrp-kun', 'danke', {
     alt: ['Danke', 'Dankeschön', 'vielen Dank'],
     emoji: '🙏',
   }),
@@ -64,7 +64,7 @@ export const items1: Item[] = [
   }),
   // L2
   s('k2-s-hello', 'สวัสดี|ครับ', 'sà-wàt-dee kráp', 'Hallo!', { alt: ['Guten Tag!', 'Hallo', 'Guten Tag'] }),
-  s('k2-s-thanks', 'ขอบคุณ|ครับ', 'kòp-kun kráp', 'Danke!', { alt: ['Danke', 'Dankeschön'] }),
+  s('k2-s-thanks', 'ขอบคุณ|ครับ', 'kòrp-kun kráp', 'Danke!', { alt: ['Danke', 'Dankeschön'] }),
   s('k2-s-sorry', 'ขอโทษ|ครับ', 'kǒr-tôht kráp', 'Entschuldigung!', {
     alt: ['Entschuldigung', 'Verzeihung', 'Tut mir leid'],
   }),
@@ -88,14 +88,14 @@ export const items1: Item[] = [
   }),
   w('k2-mai', 'ไหม', 'mǎi', 'Fragewort (ja/nein)', {
     alt: ['Frage', 'Fragepartikel', '?'],
-    note: 'Steht am Satzende und macht aus einer Aussage eine Ja/Nein-Frage.',
+    note: 'Steht am Satzende und macht aus einer Aussage eine Ja/Nein-Frage. Im Alltag oft mit hohem Ton gesprochen (mái, auch มั้ย geschrieben).',
   }),
   w('k2-maak', 'มาก', 'mâak', 'sehr', { alt: ['viel', 'viele'] }),
   w('k2-na', 'นะ', 'ná', 'Weichmacher (ja/doch)', {
     alt: ['ja', 'doch', 'mal', 'Partikel'],
     note: 'Macht Sätze freundlicher und weicher, wie dt. „ja“, „mal“, „doch“.',
   }),
-  w('k2-muean', 'เหมือนกัน', 'měuan gan', 'ebenfalls', {
+  w('k2-muean', 'เหมือนกัน', 'mǔean gan', 'ebenfalls', {
     alt: ['gleichfalls', 'auch', 'genauso', 'gleich'],
   }),
   // L4
@@ -105,12 +105,12 @@ export const items1: Item[] = [
   s('k2-s-fine', 'สบาย|ดี|ครับ', 'sà-baai dee kráp', 'Mir geht’s gut.', {
     alt: ['Gut.', 'Es geht mir gut.', 'Mir geht es gut.', 'Gut'],
   }),
-  s('k2-s-andyou', 'แล้ว|คุณ|ล่ะ|ครับ', 'láew kun lâ kráp', 'Und Ihnen?', {
+  s('k2-s-andyou', 'แล้ว|คุณ|ล่ะ|ครับ', 'láeo kun lâ kráp', 'Und Ihnen?', {
     alt: ['Und dir?', 'Und du?', 'Und Sie?'],
     note: 'แล้ว…ล่ะ = „und was ist mit …?“',
   }),
   s('k2-s-verygood', 'ดี|มาก|ครับ', 'dee mâak kráp', 'Sehr gut.', { alt: ['Sehr gut!', 'Sehr gut'] }),
-  s('k2-s-thanksmuch', 'ขอบคุณ|มาก|ครับ', 'kòp-kun mâak kráp', 'Vielen Dank!', {
+  s('k2-s-thanksmuch', 'ขอบคุณ|มาก|ครับ', 'kòrp-kun mâak kráp', 'Vielen Dank!', {
     alt: ['Danke sehr', 'Dankeschön', 'Vielen Dank', 'Danke vielmals'],
   }),
   s('k2-s-maipenraina', 'ไม่|เป็น|ไร|นะ|ครับ', 'mâi bpen rai ná kráp', 'Macht doch nichts.', {
@@ -122,7 +122,7 @@ export const items1: Item[] = [
     note: 'ยินดี allein heißt auch „gern geschehen“.',
   }),
   w('k2-roojak', 'รู้จัก', 'róo-jàk', 'kennen', { alt: ['kennenlernen', 'bekannt'] }),
-  p('k2-nicetomeet', 'ยินดี|ที่|ได้|รู้จัก', 'yin-dee têe dâai róo-jàk', 'Freut mich', {
+  p('k2-nicetomeet', 'ยินดี|ที่|ได้|รู้จัก', 'yin-dee têe dâi róo-jàk', 'Freut mich', {
     alt: ['Freut mich, Sie kennenzulernen', 'Schön, dich kennenzulernen', 'Angenehm', 'Sehr erfreut'],
     emoji: '🤝',
     note: 'Wörtlich: „erfreut, dass ich (Sie) kennenlernen durfte“.',
@@ -131,7 +131,7 @@ export const items1: Item[] = [
     alt: ['Auf Wiedersehen', 'Tschüss', 'Leb wohl'],
     note: 'Klingt eher endgültig – im Alltag sagt man meist สวัสดี oder ไปก่อนนะ.',
   }),
-  p('k2-seeyou', 'แล้ว|พบ|กัน|ใหม่', 'láew póp gan mài', 'Bis bald', {
+  p('k2-seeyou', 'แล้ว|พบ|กัน|ใหม่', 'láeo póp gan mài', 'Bis bald', {
     alt: ['Auf Wiedersehen', 'Bis zum nächsten Mal', 'Wir sehen uns', 'Bis dann'],
     note: 'Wörtlich: „dann treffen wir uns wieder“.',
   }),
@@ -150,14 +150,14 @@ export const items1: Item[] = [
     note: 'Wörtlich: „(ich) gehe zuerst“ – sehr natürlicher Abschied.',
   }),
   // L6
-  s('k2-s-nicetomeet', 'ยินดี|ที่|ได้|รู้จัก|ครับ', 'yin-dee têe dâai róo-jàk kráp', 'Freut mich, Sie kennenzulernen.', {
+  s('k2-s-nicetomeet', 'ยินดี|ที่|ได้|รู้จัก|ครับ', 'yin-dee têe dâi róo-jàk kráp', 'Freut mich, Sie kennenzulernen.', {
     alt: ['Freut mich', 'Schön, dich kennenzulernen', 'Freut mich, dich kennenzulernen', 'Angenehm'],
   }),
-  s('k2-s-metoo', 'ยินดี|ที่|ได้|รู้จัก|เหมือนกัน|ครับ', 'yin-dee têe dâai róo-jàk měuan gan kráp', 'Freut mich ebenfalls.', {
+  s('k2-s-metoo', 'ยินดี|ที่|ได้|รู้จัก|เหมือนกัน|ครับ', 'yin-dee têe dâi róo-jàk mǔean gan kráp', 'Freut mich ebenfalls.', {
     alt: ['Mich auch', 'Ebenfalls', 'Freut mich auch', 'Gleichfalls'],
   }),
   s('k2-s-bye', 'ลา|ก่อน|ครับ', 'laa gòrn kráp', 'Auf Wiedersehen!', { alt: ['Lebewohl', 'Tschüss', 'Auf Wiedersehen'] }),
-  s('k2-s-seeyou', 'แล้ว|พบ|กัน|ใหม่|นะ|ครับ', 'láew póp gan mài ná kráp', 'Bis bald!', {
+  s('k2-s-seeyou', 'แล้ว|พบ|กัน|ใหม่|นะ|ครับ', 'láeo póp gan mài ná kráp', 'Bis bald!', {
     alt: ['Bis bald', 'Wir sehen uns!', 'Bis zum nächsten Mal', 'Bis dann'],
   }),
   s('k2-s-goodluck', 'โชคดี|นะ|ครับ', 'chôhk dee ná kráp', 'Viel Glück!', {
@@ -194,7 +194,7 @@ export const items1: Item[] = [
     note: 'พวก macht den Plural: พวกเขา = „die da“, พวกเรา = „wir alle“.',
   }),
   // L2
-  w('k3-chue', 'ชื่อ', 'chêu', 'Name / heißen', { alt: ['Name', 'heißen', 'heiße'] }),
+  w('k3-chue', 'ชื่อ', 'chûue', 'Name / heißen', { alt: ['Name', 'heißen', 'heiße'] }),
   w('k3-arai', 'อะไร', 'à-rai', 'was', { alt: ['Was?', 'welche'], note: 'Fragewörter stehen meist am Satzende.' }),
   p('k3-maajak', 'มา|จาก', 'maa jàak', 'kommen aus', { alt: ['aus', 'stammen aus', 'kommt aus'] }),
   w('k3-nai', 'ไหน', 'nǎi', 'wo / welche', {
@@ -208,15 +208,15 @@ export const items1: Item[] = [
   }),
   w('k3-thai', 'ไทย', 'tai', 'thailändisch', { alt: ['Thai', 'Thailand', 'thailändisch'] }),
   // L3
-  s('k3-s-myname', 'ผม|ชื่อ|เบน|ครับ', 'pǒm chêu ben kráp', 'Ich heiße Ben.', {
+  s('k3-s-myname', 'ผม|ชื่อ|เบน|ครับ', 'pǒm chûue ben kráp', 'Ich heiße Ben.', {
     alt: ['Mein Name ist Ben.', 'Ich heiße Ben', 'Ich bin Ben.'],
     note: 'Setze einfach deinen eigenen Namen ein.',
   }),
-  s('k3-s-yourname', 'คุณ|ชื่อ|อะไร|ครับ', 'kun chêu à-rai kráp', 'Wie heißen Sie?', {
+  s('k3-s-yourname', 'คุณ|ชื่อ|อะไร|ครับ', 'kun chûue à-rai kráp', 'Wie heißen Sie?', {
     alt: ['Wie heißt du?', 'Wie ist Ihr Name?', 'Wie ist dein Name?'],
     note: 'Wörtlich: „Sie heißen was?“ – das Fragewort bleibt an der Stelle der Antwort.',
   }),
-  s('k3-s-hisname', 'เขา|ชื่อ|อะไร|ครับ', 'kǎo chêu à-rai kráp', 'Wie heißt er?', {
+  s('k3-s-hisname', 'เขา|ชื่อ|อะไร|ครับ', 'kǎo chûue à-rai kráp', 'Wie heißt er?', {
     alt: ['Wie heißt sie?', 'Wie ist sein Name?', 'Wie ist ihr Name?'],
   }),
   s('k3-s-fromwhere', 'คุณ|มา|จาก|ไหน|ครับ', 'kun maa jàak nǎi kráp', 'Woher kommen Sie?', {
@@ -241,7 +241,7 @@ export const items1: Item[] = [
   }),
   w('k3-paasaa', 'ภาษา', 'paa-sǎa', 'Sprache', { note: 'ภาษาไทย = Thai, ภาษาเยอรมัน = Deutsch (Sprache).' }),
   w('k3-poot', 'พูด', 'pôot', 'sprechen', { alt: ['reden', 'sagen'], emoji: '🗣️' }),
-  w('k3-dai', 'ได้', 'dâai', 'können', {
+  w('k3-dai', 'ได้', 'dâi', 'können', {
     alt: ['kann', 'dürfen', 'darf', 'okay'],
     note: 'Steht HINTER dem Verb: พูดได้ = kann sprechen. ได้ครับ allein = „geht klar“.',
   }),
@@ -261,16 +261,16 @@ export const items1: Item[] = [
   s('k3-s-fromgermany', 'ผม|มา|จาก|ประเทศ|เยอรมนี|ครับ', 'pǒm maa jàak bprà-têt yer-rá-má-nee kráp', 'Ich komme aus Deutschland.', {
     alt: ['Ich bin aus Deutschland.', 'Ich stamme aus Deutschland.'],
   }),
-  s('k3-s-littlethai', 'ผม|พูด|ภาษา|ไทย|ได้|นิดหน่อย|ครับ', 'pǒm pôot paa-sǎa tai dâai nít-nòi kráp', 'Ich spreche ein bisschen Thai.', {
+  s('k3-s-littlethai', 'ผม|พูด|ภาษา|ไทย|ได้|นิดหน่อย|ครับ', 'pǒm pôot paa-sǎa tai dâi nít-nòi kráp', 'Ich spreche ein bisschen Thai.', {
     alt: ['Ich kann ein bisschen Thai sprechen.', 'Ich spreche ein wenig Thai.', 'Ich kann ein wenig Thai.'],
   }),
-  s('k3-s-english', 'คุณ|พูด|ภาษา|อังกฤษ|ได้|ไหม|ครับ', 'kun pôot paa-sǎa ang-grìt dâai mǎi kráp', 'Sprechen Sie Englisch?', {
+  s('k3-s-english', 'คุณ|พูด|ภาษา|อังกฤษ|ได้|ไหม|ครับ', 'kun pôot paa-sǎa ang-grìt dâi mǎi kráp', 'Sprechen Sie Englisch?', {
     alt: ['Können Sie Englisch sprechen?', 'Sprichst du Englisch?', 'Kannst du Englisch?'],
   }),
   s('k3-s-dontunderstand', 'ผม|ไม่|เข้าใจ|ครับ', 'pǒm mâi kâo-jai kráp', 'Ich verstehe nicht.', {
     alt: ['Ich verstehe das nicht.', 'Ich verstehe nicht', 'Verstehe ich nicht.'],
   }),
-  s('k3-s-slowly', 'พูด|ช้าๆ|หน่อย|ได้|ไหม|ครับ', 'pôot cháa-cháa nòi dâai mǎi kráp', 'Können Sie bitte langsamer sprechen?', {
+  s('k3-s-slowly', 'พูด|ช้าๆ|หน่อย|ได้|ไหม|ครับ', 'pôot cháa-cháa nòi dâi mǎi kráp', 'Können Sie bitte langsamer sprechen?', {
     alt: ['Bitte langsamer sprechen.', 'Sprich bitte langsamer.', 'Können Sie langsam sprechen?'],
     note: 'ๆ wiederholt das Wort davor: ช้าๆ = schön langsam. หน่อย macht die Bitte höflich.',
   }),
@@ -311,7 +311,7 @@ export const items1: Item[] = [
   // ======================= Kapitel 4: Zahlen & Zeit =======================
   // L1
   n('k4-0', 'ศูนย์', 'sǒon', 'null', { alt: ['0'], emoji: '0️⃣', note: 'Thai-Ziffer: ๐' }),
-  n('k4-1', 'หนึ่ง', 'nèung', 'eins', { alt: ['1', 'ein', 'eine'], emoji: '1️⃣', note: 'Thai-Ziffer: ๑' }),
+  n('k4-1', 'หนึ่ง', 'nùeng', 'eins', { alt: ['1', 'ein', 'eine'], emoji: '1️⃣', note: 'Thai-Ziffer: ๑' }),
   n('k4-2', 'สอง', 'sǒrng', 'zwei', { alt: ['2'], emoji: '2️⃣', note: 'Thai-Ziffer: ๒' }),
   n('k4-3', 'สาม', 'sǎam', 'drei', { alt: ['3'], emoji: '3️⃣', note: 'Thai-Ziffer: ๓' }),
   n('k4-4', 'สี่', 'sèe', 'vier', { alt: ['4'], emoji: '4️⃣', note: 'Thai-Ziffer: ๔' }),
@@ -337,7 +337,7 @@ export const items1: Item[] = [
   n('k4-100', 'ร้อย', 'rói', 'hundert', {
     alt: ['100', 'einhundert'],
     emoji: '💯',
-    note: 'Thai-Ziffer: ๑๐๐. Meist sagt man หนึ่งร้อย (nèung rói).',
+    note: 'Thai-Ziffer: ๑๐๐. Meist sagt man หนึ่งร้อย (nùeng rói).',
   }),
   n('k4-1000', 'พัน', 'pan', 'tausend', {
     alt: ['1000', 'eintausend'],
@@ -384,8 +384,8 @@ export const items1: Item[] = [
   w('k4-mon', 'วันจันทร์', 'wan jan', 'Montag', { note: 'จันทร์ = Mond – wie im Deutschen! Tagesfarbe: Gelb.' }),
   w('k4-tue', 'วันอังคาร', 'wan ang-kaan', 'Dienstag', { note: 'อังคาร = Mars. Tagesfarbe: Rosa.' }),
   w('k4-wed', 'วันพุธ', 'wan pút', 'Mittwoch', { note: 'พุธ = Merkur. Tagesfarbe: Grün.' }),
-  w('k4-thu', 'วันพฤหัสบดี', 'wan pá-réu-hàt-sà-bor-dee', 'Donnerstag', {
-    note: 'Im Alltag kurz: วันพฤหัส (wan pá-réu-hàt). พฤหัส = Jupiter.',
+  w('k4-thu', 'วันพฤหัสบดี', 'wan pá-rúe-hàt-sà-bor-dee', 'Donnerstag', {
+    note: 'Im Alltag kurz: วันพฤหัส (wan pá-rúe-hàt). พฤหัส = Jupiter.',
   }),
   w('k4-fri', 'วันศุกร์', 'wan sùk', 'Freitag', { note: 'ศุกร์ = Venus. Tagesfarbe: Hellblau.' }),
   w('k4-sat', 'วันเสาร์', 'wan sǎo', 'Samstag', { alt: ['Sonnabend'], note: 'เสาร์ = Saturn. Tagesfarbe: Lila.' }),
@@ -393,7 +393,7 @@ export const items1: Item[] = [
   // L6
   w('k4-today', 'วันนี้', 'wan-née', 'heute', { note: 'วัน = Tag, นี้ = dieser.' }),
   w('k4-tomorrow', 'พรุ่งนี้', 'prûng-née', 'morgen', { alt: ['Morgen'] }),
-  w('k4-yesterday', 'เมื่อวาน', 'mêua-waan', 'gestern', { alt: ['Gestern'] }),
+  w('k4-yesterday', 'เมื่อวาน', 'mûea-waan', 'gestern', { alt: ['Gestern'] }),
   w('k4-now', 'ตอนนี้', 'dtorn-née', 'jetzt', { alt: ['gerade', 'nun', 'im Moment'] }),
   w('k4-morning', 'ตอนเช้า', 'dtorn-cháo', 'morgens', { alt: ['am Morgen', 'vormittags', 'Morgen'], emoji: '🌅' }),
   w('k4-evening', 'ตอนเย็น', 'dtorn-yen', 'abends', { alt: ['am Abend', 'Abend'], emoji: '🌆' }),
@@ -411,29 +411,29 @@ export const items1: Item[] = [
   s('k4-s-tomorrowsat', 'พรุ่งนี้|วันเสาร์', 'prûng-née wan sǎo', 'Morgen ist Samstag.', {
     alt: ['Morgen ist Samstag', 'Morgen ist Sonnabend.'],
   }),
-  s('k4-s-yesterdayfri', 'เมื่อวาน|วันศุกร์', 'mêua-waan wan sùk', 'Gestern war Freitag.', {
+  s('k4-s-yesterdayfri', 'เมื่อวาน|วันศุกร์', 'mûea-waan wan sùk', 'Gestern war Freitag.', {
     alt: ['Gestern war Freitag', 'Gestern ist Freitag.'],
     note: 'Keine Zeitform nötig – das Zeitwort เมื่อวาน reicht.',
   }),
-  s('k4-s-whattime', 'ตอนนี้|กี่|โมง|แล้ว|ครับ', 'dtorn-née gèe mohng láew kráp', 'Wie spät ist es jetzt?', {
+  s('k4-s-whattime', 'ตอนนี้|กี่|โมง|แล้ว|ครับ', 'dtorn-née gèe mohng láeo kráp', 'Wie spät ist es jetzt?', {
     alt: ['Wie spät ist es?', 'Wie viel Uhr ist es?', 'Wie viel Uhr ist es jetzt?'],
   }),
   s('k4-s-nine', 'ตอนนี้|เก้า|โมง|เช้า|ครับ', 'dtorn-née gâo mohng cháo kráp', 'Jetzt ist es 9 Uhr morgens.', {
     alt: ['Es ist neun Uhr morgens.', 'Es ist 9 Uhr.', 'Jetzt ist es neun Uhr morgens.'],
   }),
-  s('k4-s-seeyoutomorrow', 'แล้ว|พบ|กัน|พรุ่งนี้|นะ|ครับ', 'láew póp gan prûng-née ná kráp', 'Bis morgen!', {
+  s('k4-s-seeyoutomorrow', 'แล้ว|พบ|กัน|พรุ่งนี้|นะ|ครับ', 'láeo póp gan prûng-née ná kráp', 'Bis morgen!', {
     alt: ['Wir sehen uns morgen.', 'Bis morgen', 'Bis morgen dann!'],
   }),
 
   // ======================= Kapitel 5: Alltag =======================
   // L1
   w('k5-eat', 'กิน', 'gin', 'essen', { alt: ['isst', 'fressen'], emoji: '🍽️', note: 'กินข้าว = essen (wörtl. „Reis essen“).' }),
-  w('k5-drink', 'ดื่ม', 'dèum', 'trinken', { alt: ['trinkt'], emoji: '🥤', note: 'Umgangssprachlich auch einfach กิน.' }),
+  w('k5-drink', 'ดื่ม', 'dùuem', 'trinken', { alt: ['trinkt'], emoji: '🥤', note: 'Umgangssprachlich auch einfach กิน.' }),
   w('k5-go', 'ไป', 'bpai', 'gehen', { alt: ['fahren', 'hingehen', 'geht'], emoji: '🚶' }),
   w('k5-come', 'มา', 'maa', 'kommen', { alt: ['herkommen', 'kommt'], note: 'ไป = weg vom Sprecher, มา = zum Sprecher hin.' }),
   w('k5-sleep', 'นอน', 'norn', 'schlafen', { alt: ['liegen', 'schläft'], emoji: '😴' }),
   w('k5-learn', 'เรียน', 'rian', 'lernen', { alt: ['studieren', 'lernt'], emoji: '📚' }),
-  w('k5-buy', 'ซื้อ', 'séu', 'kaufen', { alt: ['einkaufen', 'kauft'], emoji: '🛒' }),
+  w('k5-buy', 'ซื้อ', 'súue', 'kaufen', { alt: ['einkaufen', 'kauft'], emoji: '🛒' }),
   w('k5-see', 'ดู', 'doo', 'sehen', {
     alt: ['schauen', 'anschauen', 'ansehen', 'gucken'],
     emoji: '👀',
@@ -446,7 +446,7 @@ export const items1: Item[] = [
     note: 'อยาก + Verb: อยากกิน = will essen.',
   }),
   w('k5-have', 'มี', 'mee', 'haben', { alt: ['es gibt', 'hat', 'habe'], note: 'มี heißt auch „es gibt“.' }),
-  w('k5-khue', 'คือ', 'keu', 'sein (= ist gleich)', {
+  w('k5-khue', 'คือ', 'kuue', 'sein (= ist gleich)', {
     alt: ['ist', 'sein', 'nämlich', 'das heißt'],
     note: 'Für Definitionen: นี่คือ… = Das ist… Für Beruf/Nationalität: เป็น, für Orte: อยู่.',
   }),
@@ -460,7 +460,7 @@ export const items1: Item[] = [
   w('k5-rice', 'ข้าว', 'kâao', 'Reis', { alt: ['Essen', 'Mahlzeit'], emoji: '🍚' }),
   // L3
   s('k5-s-eatrice', 'ผม|กิน|ข้าว|ครับ', 'pǒm gin kâao kráp', 'Ich esse.', { alt: ['Ich esse Reis.', 'Ich esse gerade.', 'Ich esse'] }),
-  s('k5-s-wantwater', 'ผม|อยาก|ดื่ม|น้ำ|ครับ', 'pǒm yàak dèum náam kráp', 'Ich möchte Wasser trinken.', {
+  s('k5-s-wantwater', 'ผม|อยาก|ดื่ม|น้ำ|ครับ', 'pǒm yàak dùuem náam kráp', 'Ich möchte Wasser trinken.', {
     alt: ['Ich will Wasser trinken.', 'Ich möchte Wasser.'],
   }),
   s('k5-s-havewater', 'คุณ|มี|น้ำ|ไหม|ครับ', 'kun mee náam mǎi kráp', 'Haben Sie Wasser?', {
@@ -494,7 +494,7 @@ export const items1: Item[] = [
   w('k5-where', 'ที่ไหน', 'têe-nǎi', 'wo', { alt: ['Wo?', 'wohin'], note: 'Fragewörter stehen am Satzende: ห้องน้ำอยู่ที่ไหน?' }),
   w('k5-who', 'ใคร', 'krai', 'wer', { alt: ['Wer?', 'wen', 'wem'] }),
   w('k5-why', 'ทำไม', 'tam-mai', 'warum', { alt: ['wieso', 'weshalb', 'Warum?'], note: 'Ausnahme: ทำไม steht meist am Satzanfang.' }),
-  w('k5-when', 'เมื่อไหร่', 'mêua-rài', 'wann', { alt: ['Wann?'] }),
+  w('k5-when', 'เมื่อไหร่', 'mûea-rài', 'wann', { alt: ['Wann?'] }),
   // L5
   s('k5-s-wheretoilet', 'ห้องน้ำ|อยู่|ที่ไหน|ครับ', 'hôrng-náam yòo têe-nǎi kráp', 'Wo ist die Toilette?', {
     alt: ['Wo ist das Klo?', 'Wo ist das WC?', 'Wo ist die Toilette'],
@@ -510,14 +510,14 @@ export const items1: Item[] = [
   s('k5-s-whynot', 'ทำไม|คุณ|ไม่|มา|ครับ', 'tam-mai kun mâi maa kráp', 'Warum kommen Sie nicht?', {
     alt: ['Warum kommst du nicht?', 'Warum sind Sie nicht gekommen?', 'Warum bist du nicht gekommen?'],
   }),
-  s('k5-s-when', 'คุณ|ไป|เมื่อไหร่|ครับ', 'kun bpai mêua-rài kráp', 'Wann gehen Sie?', {
+  s('k5-s-when', 'คุณ|ไป|เมื่อไหร่|ครับ', 'kun bpai mûea-rài kráp', 'Wann gehen Sie?', {
     alt: ['Wann fahren Sie?', 'Wann gehst du?', 'Wann fährst du?'],
   }),
   s('k5-s-hospital', 'ผม|อยาก|ไป|โรงพยาบาล|ครับ', 'pǒm yàak bpai rohng-pá-yaa-baan kráp', 'Ich möchte ins Krankenhaus.', {
     alt: ['Ich will ins Krankenhaus.', 'Ich möchte ins Krankenhaus gehen.'],
   }),
   // L6
-  w('k5-beautiful', 'สวย', 'sǔay', 'schön', { alt: ['hübsch'], emoji: '🌸' }),
+  w('k5-beautiful', 'สวย', 'sǔai', 'schön', { alt: ['hübsch'], emoji: '🌸' }),
   w('k5-expensive', 'แพง', 'paeng', 'teuer', { emoji: '💸' }),
   w('k5-cheap', 'ถูก', 'tòok', 'billig', { alt: ['günstig', 'preiswert'], note: 'Bedeutet auch „richtig“ (ถูกต้อง).' }),
   w('k5-hot', 'ร้อน', 'rórn', 'heiß', { alt: ['warm'], emoji: '🔥' }),
@@ -541,7 +541,7 @@ export const items1: Item[] = [
   s('k5-s-hottoday', 'วันนี้|ร้อน|มาก', 'wan-née rórn mâak', 'Heute ist es sehr heiß.', {
     alt: ['Heute ist es sehr heiß', 'Heute ist sehr heiß.'],
   }),
-  s('k5-s-beautifulhouse', 'บ้าน|คุณ|สวย|มาก|ครับ', 'bâan kun sǔay mâak kráp', 'Ihr Haus ist sehr schön.', {
+  s('k5-s-beautifulhouse', 'บ้าน|คุณ|สวย|มาก|ครับ', 'bâan kun sǔai mâak kráp', 'Ihr Haus ist sehr schön.', {
     alt: ['Dein Haus ist sehr schön.', 'Ihr Haus ist wunderschön.'],
     note: 'Besitz: Ding + Besitzer – บ้านคุณ = Ihr Haus.',
   }),

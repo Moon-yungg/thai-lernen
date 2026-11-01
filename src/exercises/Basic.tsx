@@ -6,6 +6,9 @@ import { speak, sfx } from '../lib/audio'
 import { getProgress } from '../lib/store'
 import { Speaker, SpeakerPair } from '../components/ui'
 import { checkGerman, checkThai, Solution, type ExProps } from './common'
+import { syllables, toneOf } from '../lib/tones'
+import { TONE_NAME } from '../lib/server'
+import { ToneCurve } from './Tone'
 
 type E<T extends Ex['t']> = Extract<Ex, { t: T }>
 
@@ -50,6 +53,16 @@ export function Intro({ ex, onSubmit }: ExProps<E<'intro'>>) {
               ))}
             </div>
           )}
+          {!letter && rom && syllables(it.rom).length <= 6 && (
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center' }}>
+              {syllables(it.rom).map((x, i) => (
+                <span key={i} className="pill" style={{ boxShadow: 'none', border: '2px solid var(--line)', gap: 4 }}>
+                  <ToneCurve t={toneOf(x)} w={22} h={14} /> {x} <span className="muted" style={{ fontSize: 11 }}>{TONE_NAME[toneOf(x)]}</span>
+                </span>
+              ))}
+            </div>
+          )}
+          {it.rule && <div className="g-tip" style={{ fontSize: 14, width: '100%', borderColor: 'var(--blue)' }}>📖 {it.rule}</div>}
           {it.note && <div className="g-tip" style={{ fontSize: 14, width: '100%' }}>💡 {it.note}</div>}
           <SpeakerPair text={sayText(it)} />
         </motion.div>

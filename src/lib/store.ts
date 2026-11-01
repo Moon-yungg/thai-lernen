@@ -28,6 +28,7 @@ export interface Progress {
   lessons: Record<string, { done: number; best: number }>
   tests: Record<string, number> // Kapiteltest: beste Prozent
   dialogues: Record<string, number>
+  stories: Record<string, number> // Lesetexte: bestes Ergebnis in %
   grammar: Record<string, boolean>
   xp: number
   daily: Record<string, number> // yyyy-mm-dd -> xp
@@ -44,6 +45,7 @@ const defaults = (): Progress => ({
   lessons: {},
   tests: {},
   dialogues: {},
+  stories: {},
   grammar: {},
   xp: 0,
   daily: {},

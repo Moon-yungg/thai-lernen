@@ -75,6 +75,7 @@ export function merge(a: Progress, b: Progress): Progress {
     grammar,
     tests: maxMap(a.tests, b.tests),
     dialogues: maxMap(a.dialogues, b.dialogues),
+    stories: maxMap(a.stories, b.stories),
     daily,
     xp: Math.max(a.xp, b.xp, Object.values(daily).reduce((s, v) => s + v, 0)),
     streak: newer.lastDay === a.lastDay && a.lastDay === b.lastDay ? Math.max(a.streak, b.streak) : newer.streak,

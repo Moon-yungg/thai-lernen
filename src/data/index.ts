@@ -2,18 +2,28 @@ import type { Chapter, Item, Lesson } from './types'
 import { letterChapters, letterItems } from './letters'
 import { chapters1, items1 } from './content1'
 import { chapters2, items2 } from './content2'
+import { chapters3, items3 } from './content3'
+import { chapters4, items4 } from './content4'
 import { dialogues } from './dialogues'
-import { grammar } from './grammar'
+import { grammar as baseGrammar } from './grammar'
+import { readingChapter, readingItems, readingTopics } from './reading'
+import { toneChapter, toneItems, toneSets } from './tones'
+import { stories } from './stories'
 
 export * from './types'
-export { dialogues, grammar }
+export { dialogues, stories, toneSets }
+export const grammar = [...baseGrammar, ...readingTopics]
 
-export const chapters: Chapter[] = [...letterChapters, ...chapters1, ...chapters2]
-export const items: Item[] = [...letterItems, ...items1, ...items2]
+// Reihenfolge: Schrift → Töne hören → Lesen lernen → Themen A1 → Themen A2
+export const chapters: Chapter[] = [...letterChapters, toneChapter, readingChapter, ...chapters1, ...chapters2, ...chapters3, ...chapters4]
+export const items: Item[] = [...letterItems, ...toneItems, ...readingItems, ...items1, ...items2, ...items3, ...items4]
 export const itemById = new Map(items.map((i) => [i.id, i]))
 export const getItem = (id: string) => itemById.get(id)!
 
 export const dialogueById = new Map(dialogues.map((d) => [d.id, d]))
+export const storyById = new Map(stories.map((s) => [s.id, s]))
+// Ton-Minimalpaare: Item-ID → Gruppe
+export const toneSetOf = new Map(toneSets.flatMap((set) => set.words.map((w) => [w.id, set] as const)))
 export const grammarById = new Map(grammar.map((g) => [g.id, g]))
 
 export interface LessonRef {

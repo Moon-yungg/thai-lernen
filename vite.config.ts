@@ -27,8 +27,16 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2,mp3,webp}'],
+        // App sofort offline; Audios (~23 MB) erst beim ersten Abspielen laden und dann zwischenspeichern
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2,webp}', 'audio/manifest.json'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        runtimeCaching: [
+          {
+            urlPattern: /\/audio\/.*\.mp3$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'audio', expiration: { maxEntries: 3000 }, rangeRequests: true, cacheableResponse: { statuses: [0, 200] } },
+          },
+        ],
       },
     }),
   ],

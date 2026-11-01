@@ -12,6 +12,18 @@ npm run build      # Produktions-Build nach dist/
 
 **Wichtig fürs Handy:** Mikrofon und Installation als App gehen nur über **HTTPS** (oder localhost). Im WLAN über `http://192.168…` laufen alle Übungen außer Sprechen. Für die volle Nutzung hostest du die App zum Beispiel auf GitHub Pages. Die Datei `.github/workflows/pages.yml` ist dafür schon vorbereitet.
 
+## Übungsarten
+
+Multiple Choice in vielen Varianten: Hören → Thai, Thai ↔ Deutsch, Bild ↔ Wort, Audio → Bild. Dazu kommen:
+- Paare zuordnen, Swipe-Karten („stimmt das?“), Lückentext und Satzbau (auch nach Gehör)
+- Freitext in Deutsch oder Thai
+- Zeichen schreiben, Nachsprechen mit Analyse
+- **Ton-Hörtraining:** den Ton einer Silbe bestimmen und Minimalpaare unterscheiden
+- **Lesetraining:** die richtige Aussprache zum Thai-Wort wählen, die Ablenker unterscheiden sich in Ton und Vokallänge
+- Lesetexte, Rollenspiele und Kapiteltests
+
+Die Töne für das Training liest die App direkt aus der Umschrift.
+
 ## Online-Version
 
 Die App läuft auf **https://moon-yungg.github.io/thai-lernen/**. Jeder Push auf `main` baut sie neu, über GitHub Actions und die Datei `.github/workflows/pages.yml`.
@@ -45,6 +57,11 @@ Die App erkennt den Server automatisch. Die Sprech-Übungen und Rollenspiele lau
 | Pfad | Inhalt |
 |---|---|
 | `src/data/letters.ts` | Kapitel 1: 44 Konsonanten, 29 Vokale, Tonzeichen und erste Wörter |
+| `src/data/tones.ts` | „Töne hören“: 43 Minimalpaar-Gruppen (z.B. มา/ม้า/หมา) für das Ton-Hörtraining |
+| `src/data/reading.ts` | „Lesen lernen“: 9 Leseregeln mit Übungswörtern und interaktiven Erklärungen |
+| `src/data/content3.ts`, `content4.ts` | Kapitel 10–17 (A2): Arbeit, Wohnen, Freizeit, Pläne, Behörden, Gesundheit, Meinungen, Umgangssprache & Kultur |
+| `src/data/stories.ts` | 12 Lesetexte (A1/A2) mit Verständnisfragen |
+| `docs/pruefung/` | Prüflisten für eine Thai-Lehrkraft (unsichere Stellen) |
 | `src/data/content1.ts` | Kapitel 2–5: Begrüßung, Vorstellen, Zahlen & Zeit, Alltag |
 | `src/data/content2.ts` | Kapitel 6–9: Essen, Unterwegs & Einkaufen, Beziehung, Natur & Körper |
 | `src/data/dialogues.ts` | 8 Rollenspiele mit Antwortoptionen und Feedback |

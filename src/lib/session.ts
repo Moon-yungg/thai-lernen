@@ -1,4 +1,5 @@
-import { chapterOfItem, getItem, items as allItems, type Item } from '../data'
+import { chapterOfItem, getItem, items as allItems, toneSetOf, type Item } from '../data'
+import { readingDistractors, syllables, toneOf } from './tones'
 import { getProgress } from './store'
 import { canRecognize } from './speech'
 import { serverAvailable } from './server'
@@ -32,6 +33,7 @@ export type Ex = { key: string; item: Item; retry?: boolean } & (
   | { t: 'type'; mode: 'de' | 'th' }
   | { t: 'speak' }
   | { t: 'draw'; trace: boolean }
+  | { t: 'tone'; syl: number } // Ton-Hörtraining: Ton einer Silbe bestimmen
 )
 
 let keyN = 0
@@ -113,6 +115,29 @@ function choice(item: Item, ctx: Item[], kind: string): Ex | null {
       return build({ title: item.kind === 'tone' ? 'Welches Tonzeichen ist das?' : 'Welcher Laut ist das?', th: item.th, bigTh: true }, 'letter', (i) => letterLabel(i))
     case 'sound-letter':
       return build({ title: 'Finde das Zeichen', text: letterLabel(item), sub: item.kind === 'consonant' ? item.nameRom : undefined }, 'th', (i) => i.th)
+    case 'tone-pair': {
+      // Minimalpaar: welches Wort der Ton-Gruppe war das?
+      const set = toneSetOf.get(item.id)
+      if (!set || set.words.length < 2) return null
+      return {
+        key: k(), item, t: 'choice', kind,
+        prompt: { title: 'Welches Wort hörst du? Achte auf den Ton!', audio: sayText(item) },
+        options: shuffle(set.words).map((w) => ({ id: w.id, th: w.th, sub: w.de, speak: w.th })),
+        answer: item.id, grid: set.words.length > 2,
+      }
+    }
+    case 'read-rom': {
+      // Lesen: richtige Aussprache (Ton, Vokallänge) zum Thai-Wort wählen
+      if (!/[aeiou]/.test(item.rom) || isLetter(item)) return null
+      const ds = readingDistractors(item.rom, 3)
+      if (ds.length < 2) return null
+      return {
+        key: k(), item, t: 'choice', kind,
+        prompt: { title: 'Wie liest man das?', th: item.th, bigTh: true },
+        options: shuffle([item.rom, ...ds]).map((r) => ({ id: r, text: r, speak: sayText(item) })),
+        answer: item.rom,
+      }
+    }
     case 'class': {
       const classes = [
         { id: 'mid', text: 'Mittelklasse', sub: 'กลาง' },
@@ -143,6 +168,13 @@ function single(item: Item, kind: string, ctx: Item[]): Ex | null {
       return { key: k(), item, t: 'type', mode: 'th' }
     case 'speak':
       return { key: k(), item, t: 'speak' }
+    case 'tone': {
+      const syl = syllables(item.rom)
+      if (isLetter(item) || !syl.length || syl.length > 4) return null
+      // bevorzugt eine Silbe mit nicht-mittlerem Ton, sonst zufällig
+      const idx = syl.map((x, i) => [x, i] as const).filter(([x]) => toneOf(x) !== 'm')
+      return { key: k(), item, t: 'tone', syl: (idx.length && Math.random() < 0.7 ? pick(idx) : [syl[0], Math.floor(Math.random() * syl.length)] as const)[1] }
+    }
     case 'draw':
       return { key: k(), item, t: 'draw', trace: false }
     case 'trace':
@@ -181,7 +213,10 @@ function kindsFor(item: Item, stage: 0 | 1): string[] {
     return stage === 0 ? ['th-de', 'cloze', 'listen-de', 'build'] : ['build', 'listen-build', 'cloze', 'listen-de', ...(len <= 5 ? ['type-de'] : []), ...(speakOk ? ['speak'] : [])]
   }
   const pic = item.emoji ? ['pic-th', 'th-pic', 'audio-pic'] : []
-  return stage === 0 ? ['th-de', 'listen-th', ...pic, 'flash'] : ['de-th', 'listen-th', 'type-de', 'type-th', 'listen-de', ...pic, ...(speakOk ? ['speak', 'speak'] : [])]
+  const tone = toneSetOf.has(item.id) ? ['tone-pair', 'tone'] : ['tone']
+  return stage === 0
+    ? ['th-de', 'listen-th', ...pic, 'flash', 'read-rom']
+    : ['de-th', 'listen-th', 'type-de', 'type-th', 'listen-de', ...pic, ...tone, 'read-rom', ...(speakOk ? ['speak', 'speak'] : [])]
 }
 
 export function practice(item: Item, stage: 0 | 1, ctx: Item[], avoid?: string): Ex {
@@ -202,9 +237,29 @@ function matchEx(its: Item[]): Ex | null {
 }
 
 // ---------- Session-Bauer ----------
-export function lessonSession(ids: string[], firstTime: boolean): Ex[] {
+function focusKinds(focus: 'tones' | 'reading', stage: 0 | 1): string[] {
+  if (focus === 'tones') return stage === 0 ? ['tone-pair', 'tone-pair', 'listen-th'] : ['tone-pair', 'tone', 'tone']
+  return stage === 0 ? ['read-rom', 'read-rom', 'listen-th'] : ['read-rom', 'tone', 'th-de', 'listen-th']
+}
+
+function focusPractice(it: Item, focus: 'tones' | 'reading', stage: 0 | 1, ctx: Item[]): Ex {
+  for (const kd of shuffle(focusKinds(focus, stage))) {
+    const ex = single(it, kd, ctx)
+    if (ex) return ex
+  }
+  return practice(it, stage, ctx)
+}
+
+export function lessonSession(ids: string[], firstTime: boolean, focus?: 'tones' | 'reading'): Ex[] {
   const its = ids.map(getItem)
   const q: Ex[] = []
+  if (focus) {
+    if (firstTime) its.forEach((it) => q.push({ key: k(), item: it, t: 'intro' }, focusPractice(it, focus, 0, its)))
+    else shuffle(its).forEach((it) => q.push(focusPractice(it, focus, 0, its)))
+    shuffle(its).forEach((it) => q.push(focusPractice(it, focus, 1, its)))
+    shuffle(its).forEach((it) => q.push(focusPractice(it, focus, 1, its)))
+    return q
+  }
   if (firstTime) {
     its.forEach((it, i) => {
       q.push({ key: k(), item: it, t: 'intro' })

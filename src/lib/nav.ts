@@ -7,15 +7,17 @@ export type Route =
   | { name: 'grammar'; id: string }
   | { name: 'dialogue'; id: string }
   | { name: 'alphabet' }
+  | { name: 'story'; id: string }
 
 export function chapterDone(p: Progress, c: Chapter) {
   return c.lessons.every((l) => p.lessons[l.id]?.done)
 }
 
-export function chapterUnlocked(p: Progress, c: Chapter) {
+export function chapterUnlocked(p: Progress, c: Chapter): boolean {
   if (p.settings.unlockAll) return true
   const i = chapters.indexOf(c)
   if (i === 0 || c.id === 'k2') return true // Schrift und Alltag können parallel begonnen werden
+  if (c.id === 'k1t' || c.id === 'k1r') return chapterDone(p, chapters[0]) || chapterUnlocked(p, chapters[i - 1]) // Töne/Lesen nach den Konsonanten
   const prev = chapters[i - 1]
   return chapterDone(p, prev) || (p.tests[prev.id] || 0) >= 80 || (p.tests[c.id] || 0) >= 80
 }
