@@ -106,7 +106,8 @@ function findHead(data: Uint8ClampedArray, W: number, H: number, box: { x: numbe
 
 export async function ensureFont() {
   try {
-    await document.fonts.load('150px Sarabun', 'กขค')
+    // nicht ewig warten, falls die Schrift (z.B. offline) nicht lädt
+    await Promise.race([document.fonts.load('150px Sarabun', 'กขค'), new Promise((r) => setTimeout(r, 1500))])
   } catch {}
 }
 

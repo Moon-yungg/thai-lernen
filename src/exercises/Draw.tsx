@@ -29,7 +29,7 @@ export function Draw({ ex, onSubmit, locked }: ExProps<E>) {
   // Hilfslinien + (optionale) Vorlage zeichnen
   useEffect(() => {
     const c = guide.current
-    if (!c || !fontReady) return
+    if (!c) return
     const W = c.offsetWidth
     const dpr = devicePixelRatio
     c.width = c.height = W * dpr
@@ -45,7 +45,8 @@ export function Draw({ ex, onSubmit, locked }: ExProps<E>) {
     }
     g.beginPath(); g.moveTo(W / 2, 0); g.lineTo(W / 2, W); g.stroke()
     g.setLineDash([])
-    if (hint || res) {
+    // Raster immer, Vorlage erst wenn die Schrift bereit ist
+    if (fontReady && (hint || res)) {
       // Glyphe so skalieren, dass sie ~70% des Feldes füllt (Box stammt aus dem 256er-Render)
       const gl = glyph(target)
       const s = (0.7 * W) / Math.max(gl.box.w, gl.box.h * 0.8)
@@ -170,11 +171,9 @@ export function Draw({ ex, onSubmit, locked }: ExProps<E>) {
         <div className="draw-tools">
           <button className="btn ghost small" onClick={undo} disabled={!count || !!res}>↶ Zurück</button>
           <button className="btn ghost small" onClick={clear} disabled={!count || !!res}>✕ Löschen</button>
-          {!ex.trace && (
-            <button className="btn ghost small" onClick={() => setHint((h) => !h)} disabled={!!res}>
-              💡 {hint ? 'Ausblenden' : 'Hinweis'}
-            </button>
-          )}
+          <button className="btn ghost small" onClick={() => setHint((h) => !h)} disabled={!!res}>
+            💡 {hint ? 'Ausblenden' : ex.trace ? 'Vorlage' : 'Hinweis'}
+          </button>
         </div>
       </div>
       <div className="ex-foot">
