@@ -4,6 +4,7 @@ import { getThaiVoices, speak } from '../lib/audio'
 import { chapterAccuracy, dueIds, learnedIds } from '../lib/nav'
 import { canRecognize } from '../lib/speech'
 import { apiBase, checkServer, serverAvailable } from '../lib/server'
+import { connect, disconnect, syncNow, useSync } from '../lib/sync'
 import { exportProgress, importProgress, resetProgress, today, update, useProgress } from '../lib/store'
 import { Toggle } from '../components/ui'
 
@@ -136,6 +137,8 @@ export function Profile() {
           </div>
         </div>
 
+        <CloudSync />
+
         <ServerSettings />
 
         <div className="section-title">Daten</div>
@@ -189,6 +192,55 @@ function ServerSettings() {
             <button className="btn ghost small" onClick={() => (setUrl(''), update((pp) => void (pp.settings.serverUrl = undefined)), test())}>Standard</button>
           </div>
         </div>
+      </div>
+    </>
+  )
+}
+
+// Cloud-Sync über ein privates GitHub Gist
+function CloudSync() {
+  const sync = useSync()
+  const [token, setToken] = useState('')
+  const since = sync.last ? new Date(sync.last).toLocaleString('de', { dateStyle: 'short', timeStyle: 'short' }) : null
+  return (
+    <>
+      <div className="section-title">Cloud-Sync</div>
+      <div className="card" style={{ margin: '0 16px' }}>
+        {sync.token ? (
+          <div className="list">
+            <div style={{ fontWeight: 800 }}>
+              {sync.busy ? '⏳ synchronisiere …' : sync.error ? `🔴 ${sync.error}` : '🟢 verbunden mit GitHub'}
+            </div>
+            <div className="muted" style={{ fontSize: 13, fontWeight: 700 }}>
+              Dein Fortschritt wird automatisch in einem privaten Gist gesichert und auf allen verbundenen Geräten zusammengeführt.
+              {since && <> Zuletzt: {since}.</>}
+            </div>
+            <div className="grid2">
+              <button className="btn ghost small" disabled={sync.busy} onClick={() => syncNow()}>Jetzt synchronisieren</button>
+              <button className="btn ghost small" style={{ color: 'var(--bad)' }} onClick={() => confirm('Sync auf diesem Gerät trennen? Der Fortschritt bleibt erhalten.') && disconnect()}>Trennen</button>
+            </div>
+          </div>
+        ) : (
+          <div className="list">
+            <div className="muted" style={{ fontSize: 13, fontWeight: 700, lineHeight: 1.5 }}>
+              Kostenlos sichern und zwischen Geräten abgleichen – über ein <b>privates GitHub Gist</b>. Dafür brauchst du einen Token, der nur Gists
+              lesen/schreiben darf:
+              <br />
+              1.{' '}
+              <a href="https://github.com/settings/tokens/new?scopes=gist&description=Thai%20lernen%20Sync" target="_blank" rel="noreferrer" style={{ color: 'var(--blue)' }}>
+                Token erstellen
+              </a>{' '}
+              (Häkchen bei „gist“ ist schon gesetzt, Ablauf z.B. „No expiration“)
+              <br />
+              2. Token hier einfügen. Er bleibt nur auf diesem Gerät gespeichert.
+            </div>
+            <input className="type-input" style={{ padding: 10, fontSize: 14 }} type="password" value={token} onChange={(e) => setToken(e.target.value)} placeholder="ghp_…" autoComplete="off" />
+            {sync.error && <div className="hint" style={{ color: 'var(--bad)' }}>{sync.error}</div>}
+            <button className="btn small blue" style={{ width: '100%' }} disabled={!token.trim() || sync.busy} onClick={() => connect(token).then(() => setToken(''))}>
+              {sync.busy ? 'Verbinde …' : 'Verbinden'}
+            </button>
+          </div>
+        )}
       </div>
     </>
   )

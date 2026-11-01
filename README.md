@@ -22,6 +22,14 @@ Die Ausspracheanalyse kommt dann vom PC, sofern er erreichbar ist. Die Adresse s
 1. Öffne `https://192.168.178.23:8443` und bestätige das Zertifikat.
 2. Wenn Chrome fragt, ob die Seite auf Geräte im lokalen Netzwerk zugreifen darf, tippe auf „Zulassen“.
 
+## Fortschritt & Cloud-Sync
+
+Der Fortschritt liegt im localStorage des Browsers. Optional lässt er sich in einem **privaten GitHub Gist** sichern und zwischen Geräten abgleichen: Profil → Cloud-Sync. Dafür brauchst du einen Token, der nur die Berechtigung „gist“ hat.
+
+- **Wann synchronisiert wird:** beim Start, beim Zurückkehren in die App, beim Verlassen der App und 8 s nach jeder Änderung.
+- **Zusammenführen:** Bei jedem Wort gewinnt der neuere Stand. Bei Lektionen und Tests zählt jeweils das beste Ergebnis.
+- **Was nicht hochgeladen wird:** der Token und die Einstellungen. Beides bleibt auf dem Gerät.
+
 ## Vom PC aus aufs Handy (mit Laut- und Tonanalyse)
 
 Doppelklick auf **`start.bat`**. Beim ersten Start wird alles installiert (etwa 4 GB: PyTorch mit CUDA und das Thai-Sprachmodell). Danach wird die App gebaut, und der Server startet. Er zeigt eine Adresse wie `https://192.168.178.23:8443` und einen QR-Code an.

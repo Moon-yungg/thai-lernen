@@ -86,6 +86,19 @@ export function update(fn: (p: Progress) => void) {
   listeners.forEach((l) => l())
 }
 
+// Für Hintergrund-Dienste (Cloud-Sync): bei jeder Änderung benachrichtigen
+export function subscribe(fn: () => void) {
+  listeners.add(fn)
+  return () => listeners.delete(fn)
+}
+
+// Ganzen Stand ersetzen (z.B. nach dem Zusammenführen mit der Cloud), Einstellungen bleiben lokal
+export function replaceProgress(p: Progress) {
+  state = { ...defaults(), ...p, settings: state.settings }
+  save()
+  listeners.forEach((l) => l())
+}
+
 export function useProgress(): Progress {
   return useSyncExternalStore(
     (l) => {
